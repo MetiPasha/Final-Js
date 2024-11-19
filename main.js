@@ -1,7 +1,8 @@
 import "./style.css";
 // import { el } from "./src/El/el.js";
 // import { loginPage } from "./src/pages/loginPage.js";
-import { loginPage } from "./src/pages/loginPage.js";
+// import { OnboardingPage } from "./src/components/onboarding.js";
+import { HomePage } from "./src/components/Home.js";
 // import { Home } from "./src/components/Home.js";
 
 // const button = El({
@@ -24,6 +25,6 @@ function renderLoginPage() {
   const appContainer = document.getElementById("app");
 
   appContainer.innerHTML = "";
-  appContainer.appendChild(loginPage());
+  appContainer.appendChild(HomePage());
 }
 renderLoginPage();

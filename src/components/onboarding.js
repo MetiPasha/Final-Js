@@ -38,7 +38,8 @@ export function OnboardingPage() {
           El({
             element: "img",
             className: "w-40 h-40",
-            childrens: { src: slide.image, alt: slide.title },
+            src: slide.image,
+            alt: slide.title,
           }),
           El({
             element: "h2",

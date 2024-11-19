@@ -86,7 +86,7 @@
 
 //   return container;
 // }
-import { El } from "../../el/El";
+import { El } from "../El/el.js";
 const login = () => {
   return El({
     element: "div",
@@ -124,7 +124,7 @@ const login = () => {
             element: "input",
             type: "password",
             name: "password",
-            placeholder: "🔒 Password ...",
+            placeholder: "Password",
             id: "login-password",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),

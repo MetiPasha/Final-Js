@@ -1,3 +1,4 @@
+import { El } from "../El/el.js";
 export function HomePage() {
   const products = [
     { name: "Running Shoes", price: "$120", image: "/public" },
@@ -15,7 +16,8 @@ export function HomePage() {
           El({
             element: "img",
             className: "w-32 h-32",
-            attributes: { src: product.image, alt: product.name },
+            src: product.image,
+            alt: product.name,
           }),
           El({
             element: "h3",
