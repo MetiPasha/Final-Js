@@ -86,6 +86,7 @@
 
 //   return container;
 // }
+
 import { El } from "../El/el.js";
 const login = () => {
   return El({
@@ -116,7 +117,7 @@ const login = () => {
             element: "input",
             type: "email",
             name: "email",
-            placeholder: "✉ Email ...",
+            placeholder: " Email",
             id: "login-email",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),
@@ -124,7 +125,7 @@ const login = () => {
             element: "input",
             type: "password",
             name: "password",
-            placeholder: "Password",
+            placeholder: " Password",
             id: "login-password",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),
