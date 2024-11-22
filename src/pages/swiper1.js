@@ -1,4 +1,5 @@
 import { El } from "../El/el";
+import { router } from "../routes/router";
 export const swiper1 = () => {
   return El({
     element: "div",
@@ -32,9 +33,9 @@ export const swiper1 = () => {
           El({
             element: "button",
             className: "w-full bg-gray-700 text-white rounded-full p-2 mt-1",
-            // onclick: () => {
-            //   router.navigate("/swiper2");
-            // },
+            onclick: () => {
+              router.navigate("/swiper2");
+            },
             children: ["Next"],
           }),
         ],
