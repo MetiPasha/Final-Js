@@ -1,5 +1,5 @@
 import Navigo from "navigo";
-import login from "../pages/loginPage";
+import login from "../pages/login";
 import starter from "../pages/starter";
 import welcome from "../pages/welcome";
 import swiper1 from "../pages/swiper1";
@@ -27,4 +27,7 @@ router
   })
   .on("/swiper3", () => {
     changePage(swiper3);
+  })
+  .on("/login", () => {
+    changePage(login);
   });

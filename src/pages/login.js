@@ -88,6 +88,7 @@
 // }
 
 import { El } from "../El/el.js";
+import { router } from "../routes/router.js";
 const login = () => {
   return El({
     element: "div",
@@ -99,7 +100,7 @@ const login = () => {
         element: "img",
         id: "login-image",
         className: "mt-[132px] h-[81px] w-[54px]",
-        src: "../../src/images/logo/logo-black.png",
+        src: "/icons/logo.png",
       }),
       El({
         element: "p",
@@ -148,6 +149,9 @@ const login = () => {
                 type: "submit",
                 className:
                   "border-none h-[27px] rounded-full bg-black w-[380px] text-white",
+                onclick: () => {
+                  router.navigate("/Home");
+                },
                 children: "Sign In",
               }),
             ],
