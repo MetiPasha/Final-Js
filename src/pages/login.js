@@ -88,7 +88,7 @@
 // }
 
 import { El } from "../El/el.js";
-import { router } from "../routes/router.js";
+import { loginPerson } from "../pages/loginPerson.js";
 const login = () => {
   return El({
     element: "div",
@@ -119,7 +119,7 @@ const login = () => {
             type: "email",
             name: "email",
             placeholder: " Email",
-            id: "login-email",
+            id: "loginEmail",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),
           El({
@@ -127,7 +127,7 @@ const login = () => {
             type: "password",
             name: "password",
             placeholder: " Password",
-            id: "login-password",
+            id: "loginPass",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),
           El({
@@ -140,7 +140,7 @@ const login = () => {
                 element: "input",
                 type: "checkbox",
                 name: "rememberMe",
-                id: "remember-me-checkbox",
+                id: "rememberMe",
                 className:
                   "border-2 border-gray-600 rounded-sm w-[16px] h-[16px] bg-gray-100 mr-2",
               }),
@@ -149,9 +149,6 @@ const login = () => {
                 type: "submit",
                 className:
                   "border-none h-[27px] rounded-full bg-black w-[380px] text-white",
-                onclick: () => {
-                  router.navigate("/Home");
-                },
                 children: "Sign In",
               }),
             ],
@@ -164,7 +161,7 @@ const login = () => {
           }),
         ],
         onsubmit: (event) => {
-          loginData(event);
+          loginPerson(event);
         },
       }),
     ],
