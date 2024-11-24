@@ -31,7 +31,7 @@ export const loginPerson = async (event) => {
       errorMessage.classList.remove("hidden");
     }
   } catch (error) {
-    console.error("Error during login:", error);
+    console.error("login error:", error);
   }
 };
 const autoLogin = () => {
