@@ -30,7 +30,7 @@ export const home = async () => {
                     El({
                       element: "img",
                       className: "w-[48px] h-[48px] rounded-full",
-                      src: "", //for you
+                      src: "./icons/home/userPic.png", //for you
                     }),
                   ],
                 }),
@@ -46,7 +46,7 @@ export const home = async () => {
                     El({
                       element: "p",
                       className: "font-[700] text-[16px]",
-                      children: [""],
+                      children: ["mti pasha"],
                     }),
                   ],
                 }),
