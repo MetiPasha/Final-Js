@@ -64,7 +64,7 @@ export const home = async () => {
                     El({
                       element: "img",
                       className: "w-[24px] h-[24px]",
-                      src: "../../src/images/icon/bell.svg",
+                      src: "./icons/home/bell.svg",
                     }),
                   ],
                 }),
@@ -145,7 +145,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "../../src/images/brand/nike.png",
+                              src: "./icons/home/nikeCompany.png",
                             }),
                           ],
                         }),
@@ -622,7 +622,7 @@ export const home = async () => {
               id: "cart-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/cart");
+                router.navigate("/cart");
               },
               children: [
                 El({
@@ -642,7 +642,7 @@ export const home = async () => {
               id: "orders-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/orders");
+                router.navigate("/orders");
               },
               children: [
                 El({
@@ -662,7 +662,7 @@ export const home = async () => {
               id: "Wallet-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/wallet");
+                router.navigate("/wallet");
               },
               children: [
                 El({
@@ -682,7 +682,7 @@ export const home = async () => {
               id: "profile-btn",
               className: " flex flex-col justify-center items-center",
               onclick: () => {
-                Router().navigate("/profile");
+                router.navigate("/profile");
               },
               children: [
                 El({

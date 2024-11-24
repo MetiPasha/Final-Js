@@ -1,7 +1,7 @@
 import products from "../../api/products";
-import { El } from "./src/El/el.js";
+import { El } from "../../El/el";
 
-const nike = async () => {
+const converse = async () => {
   try {
     const data = await products();
 
@@ -48,11 +48,15 @@ const nike = async () => {
           className:
             "p-[24px] absolute w-[414px] top-[80px] flex flex-wrap justify-center gap-4 overflow-y-scroll scrollbar-hidden ",
           children: data
-            .filter((item) => item.brand === "nike")
+            .filter((item) => item.brand === "converse")
             .map((item) => {
               return El({
                 element: "div",
                 id: `${item.id}`,
+                //   onclick: () => {
+                //     // productModal({ id: item.id });
+                //     // Router().navigate(`/product/${item.id}`);
+                //   },
                 className: "",
                 children: [
                   El({
@@ -90,8 +94,8 @@ const nike = async () => {
       ],
     });
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
 
-export default nike;
+export default converse;

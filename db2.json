@@ -2,14 +2,40 @@
   "users": [
     {
       "id": 1,
-      "name": "Your Name",
-      "email": "Your Email",
-      "password": "Your Password",
-      "cart": [],
-      "orders": [],
-      "wishlist": []
+      "name": "meti pasha",
+      "email": "mtipasha@gmail.com",
+      "password": "pasha",
+      "wishlist": [
+        {
+          "id": 6,
+          "title": "adidas",
+          "price": 45,
+          "order": 0,
+          "size": [44, 42, 40],
+          "color": ["rose", "emerald", "teal", "gray"],
+          "brand": "adidas",
+          "images": "http://localhost:5173/products/adidas/6.webp"
+        }
+      ],
+      "cart": [
+        {
+          "id": 1,
+          "title": "adidas",
+          "price": 245,
+          "order": 0,
+          "size": [42, 41, 40],
+          "color": ["rose", "emerald", "yellow", "gray"],
+          "brand": "adidas",
+          "images": "http://localhost:5173/products/adidas/1.webp",
+          "sizeselect": 40,
+          "colorselect": "emerald",
+          "quantity": 2,
+          "totalPr": 490
+        }
+      ]
     }
   ],
+  "wishlist": [],
   "Products": [
     {
       "id": 1,
@@ -570,5 +596,6 @@
       "brand": "reebok",
       "images": "http://localhost:5173/products/reebok/8.webp"
     }
-  ]
+  ],
+  "Orderlist": []
 }

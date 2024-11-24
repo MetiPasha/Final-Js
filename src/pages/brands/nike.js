@@ -1,7 +1,7 @@
 import products from "../../api/products";
-import { El } from "./src/El/el.js";
+import { El } from "../../El/el";
 
-const adidas = async () => {
+const nike = async () => {
   try {
     const data = await products();
 
@@ -48,7 +48,7 @@ const adidas = async () => {
           className:
             "p-[24px] absolute w-[414px] top-[80px] flex flex-wrap justify-center gap-4 overflow-y-scroll scrollbar-hidden ",
           children: data
-            .filter((item) => item.brand === "adidas")
+            .filter((item) => item.brand === "nike")
             .map((item) => {
               return El({
                 element: "div",
@@ -94,4 +94,4 @@ const adidas = async () => {
   }
 };
 
-export default adidas;
+export default nike;

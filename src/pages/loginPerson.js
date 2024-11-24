@@ -1,12 +1,13 @@
 import { Url } from "../api/Url";
 import { router } from "../routes/router";
 
-export const loginPerson = async (event) => {
+export const loginData = async (event) => {
   event.preventDefault();
 
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPass").value;
-  const rememberMe = document.getElementById("rememberMe").checked;
+  //   dom
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
+  const rememberMe = document.getElementById("remember-me-checkbox").checked;
 
   try {
     const response = await fetch(`${Url}/users`);
@@ -23,6 +24,7 @@ export const loginPerson = async (event) => {
         localStorage.removeItem("password");
       }
 
+      // Navigate to home if successful login
       if (router && router.navigate) {
         router.navigate("/home");
       }
@@ -31,7 +33,7 @@ export const loginPerson = async (event) => {
       errorMessage.classList.remove("hidden");
     }
   } catch (error) {
-    console.error("login error:", error);
+    console.error("Error during login:", error);
   }
 };
 const autoLogin = () => {
@@ -46,15 +48,38 @@ const autoLogin = () => {
           (user) => user.email === email && user.password === password
         );
         if (user) {
-          router.navigate("/home");
+          router.navigate("/home"); // Successfully logged in
         } else {
           localStorage.removeItem("email");
           localStorage.removeItem("password");
         }
       })
-      .catch((error) => {
-        console.error(error);
+      .catch((err) => {
+        console.error("Error checking auto-login:", err);
       });
   }
 };
 autoLogin();
+
+// const autoLogin = async () => {
+//   const email = localStorage.getItem("email");
+//   const password = localStorage.getItem("password");
+
+//   if (email && password) {
+//     const response = await fetch("http://localhost:4000/users");
+//     const users = await response.json();
+
+//     const user = users.find((user) => user.email === email);
+
+//     if (user) {
+//       router.navigate("/home"); // Successfully logged in
+//     } else {
+//       localStorage.removeItem("email");
+//       localStorage.removeItem("password");
+//     }
+//   }
+// };
+
+// autoLogin();
+
+export default loginData;
