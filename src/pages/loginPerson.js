@@ -24,7 +24,7 @@ export const loginPerson = async (event) => {
       }
 
       if (router && router.navigate) {
-        router.navigate("/Home");
+        router.navigate("/home");
       }
     } else {
       const errorMessage = document.getElementById("error-message");
@@ -46,7 +46,7 @@ const autoLogin = () => {
           (user) => user.email === email && user.password === password
         );
         if (user) {
-          router.navigate("/Home");
+          router.navigate("/home");
         } else {
           localStorage.removeItem("email");
           localStorage.removeItem("password");

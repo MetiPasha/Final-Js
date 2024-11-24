@@ -1,10 +1,11 @@
 import Navigo from "navigo";
-import login from "../pages/login";
 import starter from "../pages/starter";
 import welcome from "../pages/welcome";
 import swiper1 from "../pages/swiper1";
 import swiper2 from "../pages/swiper2";
 import swiper3 from "../pages/swiper3";
+import login from "../pages/login";
+import home from "../pages/home";
 export const router = new Navigo("/");
 const changePage = (target) => {
   const root = document.getElementById("app");
@@ -30,4 +31,7 @@ router
   })
   .on("/login", () => {
     changePage(login);
+  })
+  .on("/home", () => {
+    changePage(home);
   });

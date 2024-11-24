@@ -94,7 +94,7 @@ const login = () => {
     element: "div",
     id: "login-page",
     className:
-      "w-[414px] h-screen border border-black bg-gray-100 flex flex-col items-center overflow-x-hidden overflow-y-hidden",
+      "w-[414px] h-screen mx-auto border border-black bg-gray-100 flex flex-col items-center overflow-x:hidden overflow-y:hidden",
     children: [
       El({
         element: "img",
@@ -157,7 +157,7 @@ const login = () => {
             element: "p",
             id: "error-message",
             className: "text-red-500 mt-4 text-center hidden",
-            children: ["Invalid email or password"],
+            children: ["there is a problem with email or pass "],
           }),
         ],
         onsubmit: (event) => {
