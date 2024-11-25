@@ -1,36 +1,33 @@
 import userData from "../../api/UserData";
+import { El } from "../../El/el";
 import getOneProduct from "../../api/getOneProduct";
 import { reduceCounterShoe } from "../../components/card/reduceCounterShoes";
-import { increasCounterShoes } from "../../components/card/increasCounterShoes";
+import increasCounterShoes from "../../components/card/increasCounterShoes";
+import { router } from "json-server";
+import { AddFavorites } from "../../api/postWhishs";
+import { postproductone } from "../../api/postProductToCard";
 
-import { AddFavorites } from "../../api/postWhishListt";
-import { router } from "../../routes/router";
-import { postproductone } from "../../api/postproductToCart";
-import { El } from "../../El/el";
-
-// let selectedcolor = "";
 export const productDetail = async (dataid) => {
   try {
     const data = await getOneProduct(dataid);
-    // console.log("get one Product datail data", data);
 
     function colorGeneratore(color) {
       switch (color) {
         case "rose":
           return "bg-rose-700";
-          break;
+
         case "gray":
           return "bg-gray-700";
-          break;
+
         case "emerald":
           return "bg-emerald-700";
-          break;
+
         case "teal":
           return "bg-teal-700";
-          break;
+
         case "yellow":
           return "bg-yellow-700";
-          break;
+
         default:
           break;
       }
@@ -62,7 +59,7 @@ export const productDetail = async (dataid) => {
             }),
           ],
         }),
-        // image
+
         El({
           element: "div",
           className: "w-[414px] h-96 overflow-hidden",
@@ -76,7 +73,6 @@ export const productDetail = async (dataid) => {
           ],
         }),
 
-        // description -wishlist
         El({
           element: "div",
           className: "w-[414px] flex flex-col py-6 gap-2",
@@ -94,7 +90,6 @@ export const productDetail = async (dataid) => {
                   element: "button",
                   className: "",
 
-                  // wishlist
                   onclick: async () => {
                     try {
                       const data = await getOneProduct(dataid);
@@ -106,42 +101,27 @@ export const productDetail = async (dataid) => {
 
                         userObjclone.wishlist = userObjclone.wishlist || [];
 
-                        // console.log("User object", userObjclone);
-
-                        // Check if the product is already in the wishlist
                         const isInWishlist = userObjclone.wishlist.find(
                           (item) => item.id === data.id
                         );
-                        // console.log(isInWishlist);
 
                         if (!isInWishlist) {
-                          // If the product is not in the wishlist, add it
                           const updatedWishlist = [
                             ...userObjclone.wishlist,
                             data,
-                          ]; // Create a new array with the new product
+                          ];
 
                           const updatedUser = await AddFavorites(
                             1,
                             updatedWishlist
-                          ); // Assuming user ID is 1
-
-                          // Update the local user object with the new wishlist
+                          );
                           userObjclone.wishlist = updatedUser.wishlist;
 
-                          // Optionally, save the updated wishlist to localStorage
-                          // localStorage.setItem("useWishlist", JSON.stringify(userObjclone));
-
-                          // Update the UI (example: hide the 'add to wishlist' button)
                           document
                             .getElementById("likebtn-wishlist")
                             .classList.add("hidden");
 
-                          // Optionally show a success message or update UI elements
                           console.log("Added to wishlist successfully!");
-
-                          // Update the wishlist UI (this could be a separate function that you call)
-                          // renderWishlist(userObjclone.wishlist);
                         } else {
                           console.log("Product is already in wishlist.");
                         }
@@ -162,8 +142,6 @@ export const productDetail = async (dataid) => {
                 }),
               ],
             }),
-
-            //  description-star
 
             El({
               element: "div",
@@ -195,7 +173,6 @@ export const productDetail = async (dataid) => {
           ],
         }),
 
-        //   description
         El({
           element: "div",
           className: "w-[414px] px-6 flex flex-col gap-3 py-10",
@@ -218,7 +195,6 @@ export const productDetail = async (dataid) => {
               ],
             }),
 
-            //   size
             El({
               element: "div",
               className: "flex gap-32",
@@ -237,8 +213,6 @@ export const productDetail = async (dataid) => {
                       className: "flex gap-2",
                       children: [
                         ...data.size.map((item) => {
-                          // console.log(item);   //42,41,40
-
                           return El({
                             element: "button",
                             className: `border border-black w-8 h-8 rounded-full`,
@@ -249,15 +223,11 @@ export const productDetail = async (dataid) => {
                               let buttons = [...e.target.parentNode.children];
                               console.log(buttons);
                               buttons.map((button) => {
-                                // console.log(button);
                                 if (button === index) {
-                                  // console.log(index);
                                   index.classList.add("bg-black");
                                   index.classList.add("text-white");
                                   index.classList.add("selected-size");
-                                  // console.log(index);
                                 } else if (button !== index) {
-                                  // console.log(button);
                                   button.classList.remove("bg-black");
                                   button.classList.remove("text-white");
                                   button.classList.remove("selected-size");
@@ -270,8 +240,6 @@ export const productDetail = async (dataid) => {
                     }),
                   ],
                 }),
-
-                // color
 
                 El({
                   element: "div",
@@ -287,7 +255,6 @@ export const productDetail = async (dataid) => {
                       className: "flex gap-2",
                       children: [
                         ...data.color.map((item) => {
-                          // console.log(item);
                           return El({
                             element: "button",
                             value: item,
@@ -295,29 +262,22 @@ export const productDetail = async (dataid) => {
                               item
                             )}`,
                             onclick: (e) => {
-                              // selectedcolor = item;
-                              // console.log(selectedcolor);
                               let index = e.target;
-                              // console.log(index);
+
                               let buttons = [...e.target.parentNode.children];
-                              // console.log(buttons);
+
                               buttons.map((button) => {
-                                // console.log(button);
                                 if (button === index) {
-                                  // console.log(index);
                                   index.classList.add("border-[3px]");
                                   index.classList.add("border-black");
                                   index.classList.add(`selected-color`);
-                                  // console.log(index);
                                 } else if (button !== index) {
-                                  // console.log(button);
                                   button.classList.remove("border-[3px]");
                                   button.classList.remove("border-black");
                                   button.classList.remove(`selected-color`);
                                 }
                               });
                             },
-                            // children: [`bg-${item}-700`],
                           });
                         }),
                       ],
@@ -329,7 +289,6 @@ export const productDetail = async (dataid) => {
           ],
         }),
 
-        // quntity
         El({
           element: "div",
           className: "flex w-[414px] gap-4 mt-6 items-center",
@@ -371,7 +330,6 @@ export const productDetail = async (dataid) => {
           ],
         }),
 
-        //totoalprice
         El({
           element: "div",
           className: "w-[414px] px-6 flex justify-between py-8",
@@ -394,20 +352,17 @@ export const productDetail = async (dataid) => {
               ],
             }),
 
-            // add to cart
             El({
               element: "button",
               className:
                 "bg-black text-white h-16 w-60 flex justify-center items-center rounded-full",
               onclick: async () => {
                 try {
-                  // Fetch user data
                   const res = await userData(1);
                   const clone = res.cart || [];
 
                   console.log(clone);
 
-                  // Get UI values with checks for null elements
                   const counterShoeElement =
                     document.getElementById("counterShoe");
                   const totalPriceShoeElement =
@@ -416,12 +371,6 @@ export const productDetail = async (dataid) => {
                     document.querySelector(".selected-size");
                   const selectedColorElement =
                     document.querySelector(".selected-color");
-
-                  // Log each element to check which is missing
-                  // console.log("counterShoe:", counterShoeElement);
-                  // console.log("totalPriceShoe:", totalPriceShoeElement);
-                  // console.log("selectedSizeElement:", selectedSizeElement);
-                  // console.log("selectedColorElement:", selectedColorElement);
 
                   if (
                     !counterShoeElement ||
@@ -436,22 +385,19 @@ export const productDetail = async (dataid) => {
 
                   let quantity = Number(
                     counterShoeElement.firstChild.data || 0
-                  ); // Fallback to 0 if no data is available
+                  );
                   let totalPr = Number(
                     totalPriceShoeElement.firstChild.data.substr(2) || 0
-                  ); // Fallback to 0 if no data
+                  );
                   let sizeselect = Number(
                     selectedSizeElement.firstChild.data || 0
-                  ); // Fallback to 0 if no data
-                  let selectedcolor = selectedColorElement.value; // Fallback to "default" if no color selected
-
-                  // Find the existing product in the cart
+                  );
+                  let selectedcolor = selectedColorElement.value;
                   const previousOrder = clone.find(
                     (item) => item.id === data.id
                   );
 
                   if (previousOrder) {
-                    // If the product already exists in the cart, update its quantity and total price
                     clone.forEach((item) => {
                       if (item.id === previousOrder.id) {
                         item.quantity += quantity;
@@ -461,7 +407,6 @@ export const productDetail = async (dataid) => {
                       }
                     });
                   } else {
-                    // If the product does not exist in the cart, add it
                     data.sizeselect = sizeselect;
                     data.colorselect = selectedcolor;
                     data.quantity = quantity;
@@ -469,10 +414,8 @@ export const productDetail = async (dataid) => {
                     clone.push(data);
                   }
 
-                  // Update the cart in the backend
                   await postproductone(1, clone);
 
-                  // Redirect to home page
                   router.navigate("/home");
                 } catch (error) {
                   console.error("Error while processing the cart:", error);
@@ -483,8 +426,6 @@ export const productDetail = async (dataid) => {
             }),
           ],
         }),
-
-        //   end
       ],
     });
   } catch (error) {
