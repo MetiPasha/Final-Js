@@ -1,6 +1,6 @@
-import { router } from "../routes/router";
-import { products } from "../api/products";
-import { El } from "../El/el";
+import products from "../../api/products.js";
+import { El } from "../../El/el.js";
+import { router } from "../../routes/router.js";
 
 export const home = async () => {
   try {
@@ -10,7 +10,7 @@ export const home = async () => {
       element: "div",
       id: "home",
       className:
-        "w-[414px]  h-[82px] flex flex-col items-center justify-center overflow-y-hidden scrollbar-hidden",
+        "w-[414px]  h-[82px] mx-auto flex flex-col items-center justify-center overflow-y-hidden scrollbar-hidden",
       children: [
         El({
           element: "nav",
@@ -79,7 +79,7 @@ export const home = async () => {
                     El({
                       element: "img",
                       className: "w-[24px] h-[24px]",
-                      src: "../../src/images/icon/like.svg",
+                      src: "./icons/home/heart.svg",
                     }),
                   ],
                 }),
@@ -114,7 +114,7 @@ export const home = async () => {
                 El({
                   element: "img",
                   className: "absolute top-[35px] left-[30px]",
-                  src: "../../src/images/icon/search.svg",
+                  src: "./icons/home/input-prefix.png",
                 }),
               ],
             }),
@@ -145,7 +145,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "./icons/home/nikeCompany.png",
+                              src: "./icons/home/nike.png",
                             }),
                           ],
                         }),
@@ -172,7 +172,7 @@ export const home = async () => {
                           children: [
                             El({
                               element: "img",
-                              src: "../../src/images/brand/adidas.png",
+                              src: "./icons/home/adidas.png",
                             }),
                           ],
                         }),
@@ -200,7 +200,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "../../src/images/brand/puma.png",
+                              src: "./icons/home/puma.png",
                             }),
                           ],
                         }),
@@ -227,7 +227,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: ".../../src/images/brand/asics.png",
+                              src: "./icons/home/asics.png",
                             }),
                           ],
                         }),
@@ -268,7 +268,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "../../src/images/brand/reebok.png",
+                              src: "./icons/home/reebok.png",
                             }),
                           ],
                         }),
@@ -295,7 +295,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "../../src/images/brand/newbalance.png",
+                              src: "./icons/home/newbalance.png",
                             }),
                           ],
                         }),
@@ -322,7 +322,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "../../src/images/brand/converse.png",
+                              src: "./icons/home/converse.png",
                             }),
                           ],
                         }),
@@ -346,7 +346,7 @@ export const home = async () => {
                             El({
                               element: "img",
                               className: "",
-                              src: "../../src/images/brand/more.png",
+                              src: "./icons/home/more.png",
                             }),
                           ],
                         }),
@@ -532,65 +532,6 @@ export const home = async () => {
             });
           }),
         }),
-        // El({
-        //   element: "div",
-        //   id: "products-home",
-        //   className:
-        //     "p-[24px] w-[414px] bg-white top-[480px] absolute flex flex-wrap justify-center gap-4 overflow-y-scroll  scrollbar-hidden",
-        //   children: [
-        //     El({
-        //       element: "div",
-        //       id: "2",
-        //       // onclick: () => {
-        //       //   // productModal({ id: item.id });
-        //       //   Router().navigate(`/product/${item.id}`);
-        //       // },
-        //       className: "",
-        //       children: [
-        //         El({
-        //           element: "div",
-        //           className:
-        //             "w-[182px] h-[182px] bg-gray-100 shadow-lg rounded-2xl",
-        //           children: [
-        //             El({
-        //               element: "img",
-        //               className: "rounded-2xl w-full h-full",
-        //               src: "../../src/images/brand/nike.png",
-        //             }),
-        //           ],
-        //         }),
-        //         El({
-        //           element: "div",
-        //           className: "mt-3",
-        //           children: [
-        //             El({
-        //               element: "p",
-        //               className: "font-[700] text-[20px]",
-        //               children: ["nike"],
-        //             }),
-        //             El({
-        //               element: "p",
-        //               className: "font-[600] text-[16px]",
-        //               children: ["16000"],
-        //             }),
-        //           ],
-        //         }),
-        //       ],
-        //     }),
-        //   ],
-        //   // El({
-        //   //   element: "div",
-        //   //   className:
-        //   //     "w-[182px] h-[182px] bg-gray-100 shadow-lg rounded-2xl",
-        //   //   children: [
-        //   //     El({
-        //   //       element: "img",
-        //   //       className: "rounded-2xl w-full h-full",
-        //   //       src: `${data.images}`,
-        //   //     }),
-        //   //   ],
-        //   // }),
-        // }),
 
         //   footer
 
@@ -608,7 +549,7 @@ export const home = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/home-select.svg",
+                  src: "./icons/home/Home.png",
                 }),
                 El({
                   element: "p",
@@ -628,7 +569,7 @@ export const home = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/cart.svg",
+                  src: "./icons/home/Cart.png",
                 }),
                 El({
                   element: "p",
@@ -648,7 +589,7 @@ export const home = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/orders.svg",
+                  src: "./icons/home/Orders.png",
                 }),
                 El({
                   element: "p",
@@ -668,7 +609,7 @@ export const home = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/wallet.svg",
+                  src: "./icons/home/Wallet.png",
                 }),
                 El({
                   element: "p",
@@ -688,7 +629,7 @@ export const home = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/profile.svg",
+                  src: "./icons/home/Profile.png",
                 }),
                 El({
                   element: "p",

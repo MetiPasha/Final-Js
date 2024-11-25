@@ -4,7 +4,6 @@ import { router } from "../routes/router";
 const starter = () => {
   setTimeout(() => {
     router.navigate("/welcome");
-    // console.log("settimeout");
   }, 3000);
   return El({
     element: "div",

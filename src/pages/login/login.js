@@ -1,18 +1,17 @@
-import { El } from "../El/el";
-import loginData from "./loginPerson";
-
+import { El } from "../../El/el";
+import loginData from "../login/loginPerson";
 const login = () => {
   return El({
     element: "div",
     id: "login-page",
     className:
-      "w-[414px] h-screen border border-black bg-gray-100 flex flex-col items-center overflow-x-hidden overflow-y-hidden",
+      "w-[414px] h-screen mx-auto border border-black bg-gray-100 flex flex-col items-center overflow-x-hidden overflow-y-hidden",
     children: [
       El({
         element: "img",
         id: "login-image",
         className: "mt-[132px] h-[81px] w-[54px]",
-        src: "../../src/images/logo/logo-black.png",
+        src: "./icons/logo.png",
       }),
       El({
         element: "p",
@@ -30,7 +29,7 @@ const login = () => {
             element: "input",
             type: "email",
             name: "email",
-            placeholder: "✉ Email ...",
+            placeholder: " Email",
             id: "login-email",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),
@@ -38,7 +37,7 @@ const login = () => {
             element: "input",
             type: "password",
             name: "password",
-            placeholder: "🔒 Password ...",
+            placeholder: " Password",
             id: "login-password",
             className: "border-none h-[40px] rounded-lg bg-gray-300 w-full",
           }),

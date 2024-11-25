@@ -1,11 +1,11 @@
 import Navigo from "navigo";
 import starter from "../pages/starter";
 import welcome from "../pages/welcome";
-import swiper1 from "../pages/swiper1";
-import swiper2 from "../pages/swiper2";
-import swiper3 from "../pages/swiper3";
-import login from "../pages/login";
-import home from "../pages/Home";
+import swiper1 from "../pages/swipers/swiper1";
+import swiper2 from "../pages/swipers/swiper2";
+import swiper3 from "../pages/swipers/swiper3";
+import login from "../pages/login/login";
+import home from "../pages/home/home";
 import adidas from "../pages/brands/adidas";
 import asics from "../pages/brands/asics";
 import nike from "../pages/brands/nike";
@@ -14,6 +14,9 @@ import newbalance from "../pages/brands/newbalance";
 import puma from "../pages/brands/puma";
 import reebok from "../pages/brands/reebok";
 import search from "../pages/search";
+import productDetail from "../pages/productDetail/productDetail";
+import cart from "../pages/cart/cart";
+import wishList from "../pages/wishList/wishList";
 
 export const router = new Navigo("/");
 const changePage = (target) => {
@@ -22,11 +25,9 @@ const changePage = (target) => {
   root.append(target());
 };
 const changePage2 = (target, item) => {
-  // console.log(item);
   target(item).then((res) => {
     const root = document.getElementById("app");
     root.innerHTML = "";
-    // console.log(res);
     root.append(res);
   });
 };
@@ -77,7 +78,11 @@ router
     changePage2(search);
   })
   .on("/productDetail/:id", (item) => {
-    // console.log(item);
-
     changePage2(productDetail, item.data.id);
+  })
+  .on("/cart", () => {
+    changePage2(cart);
+  })
+  .on("/wishList", () => {
+    changePage2(wishList);
   });

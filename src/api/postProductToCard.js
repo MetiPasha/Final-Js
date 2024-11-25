@@ -7,7 +7,7 @@ export const postproductone = async (userid, data) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ cart: data }), // Convert the data object to JSON
+      body: JSON.stringify({ cart: data }),
     });
 
     if (!response.ok) {

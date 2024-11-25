@@ -3,9 +3,9 @@ import { El } from "../../El/el";
 import getOneProduct from "../../api/getOneProduct";
 import { reduceCounterShoe } from "../../components/card/reduceCounterShoes";
 import increasCounterShoes from "../../components/card/increasCounterShoes";
-import { router } from "json-server";
 import { AddFavorites } from "../../api/postWhishs";
 import { postproductone } from "../../api/postProductToCard";
+import { router } from "../../routes/router";
 
 export const productDetail = async (dataid) => {
   try {

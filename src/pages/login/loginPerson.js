@@ -1,5 +1,5 @@
-import { Url } from "../api/Url";
-import { router } from "../routes/router";
+import { Url } from "../../api/Url";
+import { router } from "../../routes/router";
 
 export const loginData = async (event) => {
   event.preventDefault();

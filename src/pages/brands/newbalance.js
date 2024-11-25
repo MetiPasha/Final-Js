@@ -8,7 +8,7 @@ const newbalance = async () => {
     return El({
       element: "div",
       id: "adidasPage",
-      className: "w-[414px] h-screen flex flex-col overflow-y-hidden",
+      className: "w-[414px] h-screen mx-auto flex flex-col overflow-y-hidden",
       children: [
         El({
           element: "div",

@@ -1,5 +1,6 @@
-import { El } from "../El/el";
-import { router } from "../routes/router";
+import { El } from "../../El/el";
+import { router } from "../../routes/router";
+
 export const swiper2 = () => {
   return El({
     element: "div",

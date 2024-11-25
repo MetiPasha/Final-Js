@@ -1,6 +1,6 @@
-import { El } from "../El/el";
-import { router } from "../routes/router";
-export const swiper3 = () => {
+import { El } from "../../El/el";
+import { router } from "../../routes/router";
+export const swiper1 = () => {
   return El({
     element: "div",
     id: "swiper1",
@@ -11,7 +11,7 @@ export const swiper3 = () => {
         element: "img",
         id: "img-swiper1",
         className: "h-[500px] w-full object-cover",
-        src: "/onboarding/WallpaperDog-20534715 1.png",
+        src: "/onboarding/WallpaperDog-20534536 1.png",
       }),
       El({
         element: "div",
@@ -28,13 +28,13 @@ export const swiper3 = () => {
             element: "img",
             id: "text-1",
             className: "",
-            src: "/icons/swiper3.png",
+            src: "/icons/swiper1.png",
           }),
           El({
             element: "button",
             className: "w-full bg-gray-700 text-white rounded-full p-2 mt-1",
             onclick: () => {
-              router.navigate("/login");
+              router.navigate("/swiper2");
             },
             children: ["Next"],
           }),
@@ -43,4 +43,4 @@ export const swiper3 = () => {
     ],
   });
 };
-export default swiper3;
+export default swiper1;
