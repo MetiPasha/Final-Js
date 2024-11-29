@@ -2,7 +2,7 @@ import products from "../api/products";
 import { Url } from "../api/Url";
 import { El } from "../El/el";
 import { router } from "../routes/router";
-
+// Define the search function
 const search = async () => {
   const data = await products();
   try {
@@ -39,15 +39,18 @@ const search = async () => {
                   onkeyup: (e) => {
                     document
                       .getElementById("not-search")
+                      //Add the 'hidden' class to the search list
                       .classList.add("hidden");
+                    // Select the DOM element for the search box
                     const search = document.getElementById("products-search");
+                    // Clear any previous search results
                     search.innerHTML = "";
 
                     fetch(`${Url}/Products?q=${e.target.value}`)
                       .then((res) => res.json())
                       .then((data) => {
                         search.innerHTML = "";
-
+                        // Iterate through the list of products returned from the API
                         data.map((item) => {
                           search.appendChild(
                             El({

@@ -15,14 +15,14 @@ export const home = async () => {
         "w-[414px]  h-[82px] mx-auto flex flex-col items-center justify-center overflow-y-hidden scrollbar-hidden",
       children: [
         El({
-          element: "nav",
-          id: "top-nav",
+          element: "nav", // Navigation bar
+          id: "top-nav", // ID for the navigation bar
           className:
             "fixed flex w-[414px] h-[80px] top-0 justify-between items-center px-[24px] bg-white z-10",
           children: [
             El({
               element: "div",
-              className: "flex gap-[16px]",
+              className: "flex gap-[16px]", //Styling for spacing
               children: [
                 El({
                   element: "button",
@@ -639,9 +639,10 @@ export const home = async () => {
           ],
         }),
 
-        //   ---------end
+        //   ----end
       ],
     });
+    // Handling potential errors
   } catch (error) {
     console.log(error);
   }
