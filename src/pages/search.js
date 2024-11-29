@@ -9,7 +9,7 @@ const search = async () => {
     return El({
       element: "div",
       id: "Search",
-      className: "w-[414px] h-screen flex flex-col overflow-y-hidden",
+      className: "w-[414px] h-screen mx-auto flex flex-col overflow-y-hidden",
       children: [
         El({
           element: "div",
@@ -25,7 +25,7 @@ const search = async () => {
                 El({
                   element: "img",
                   className: "text-2xl",
-                  src: "./src/images/icon/back.svg",
+                  src: "./icons/back.svg",
                 }),
               ],
             }),
@@ -43,15 +43,12 @@ const search = async () => {
                     const search = document.getElementById("products-search");
                     search.innerHTML = "";
 
-                    // Use fetch() directly with BASEURL
                     fetch(`${Url}/Products?q=${e.target.value}`)
-                      .then((res) => res.json()) // Parse the JSON response
+                      .then((res) => res.json())
                       .then((data) => {
-                        // Clear previous search results
                         search.innerHTML = "";
 
                         data.map((item) => {
-                          // Append each product result
                           search.appendChild(
                             El({
                               element: "div",
@@ -108,7 +105,7 @@ const search = async () => {
                   element: "img",
                   className:
                     "absolute z-20 w-[414px] h-[18px] top-[45px] left-[-150px]",
-                  src: "./src/images/icon/search.svg",
+                  src: "./icons/home/input-prefix.png",
                 }),
                 El({
                   element: "div",
@@ -126,7 +123,7 @@ const search = async () => {
                     El({
                       element: "img",
                       className: "",
-                      src: "./src/images/icon/dont.png",
+                      src: "./icons/pages.png",
                     }),
                     El({
                       element: "p",

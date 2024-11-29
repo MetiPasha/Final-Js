@@ -1,7 +1,6 @@
 import { cartData } from "../../api/cartData";
 import { cartIncreasebtnshoe } from "../../components/card/cartIncreasebtnshoe";
 import { cartReducebtnshoe } from "../../components/card/cartReducebtnshoe";
-import { totalCart } from "../../components/card/totalCart";
 import { El } from "../../El/el";
 import { router } from "../../routes/router";
 
@@ -31,7 +30,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[30px] ",
-                  src: "./src/images/logo/logo-black.png",
+                  src: "./icons/logo.png",
                 }),
                 El({
                   element: "p",
@@ -50,7 +49,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/search.svg",
+                  src: "./icons/home/input-prefix.png",
                 }),
               ],
             }),
@@ -145,7 +144,7 @@ const cart = async () => {
                               element: "img",
                               dataset: { id: `${item.id}` },
                               className: "w-6 h-6",
-                              src: "http://localhost:5173/src/images/icon/bin.svg",
+                              src: "./icons/bin.svg",
                             }),
                           ],
                         }),
@@ -274,7 +273,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/home.png",
+                  src: "./icons/home/Home.png",
                 }),
                 El({
                   element: "p",
@@ -291,7 +290,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/cart-select.png",
+                  src: "./icons/home/Cart.png",
                 }),
                 El({
                   element: "p",
@@ -311,7 +310,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/orders.svg",
+                  src: "./icons/home/Orders.png",
                 }),
                 El({
                   element: "p",
@@ -331,7 +330,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/wallet.svg",
+                  src: "./icons/home/Wallet.png",
                 }),
                 El({
                   element: "p",
@@ -351,7 +350,7 @@ const cart = async () => {
                 El({
                   element: "img",
                   className: "w-[24px] h-[24px]",
-                  src: "./src/images/icon/profile.svg",
+                  src: "./icons/home/Profile.png",
                 }),
                 El({
                   element: "p",

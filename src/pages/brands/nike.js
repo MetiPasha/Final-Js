@@ -29,14 +29,14 @@ const nike = async () => {
                     El({
                       element: "img",
                       className: "text-2xl",
-                      src: "./src/images/icon/back.svg",
+                      src: "./icons/back.svg",
                     }),
                   ],
                 }),
                 El({
                   element: "h1",
                   className: "text-2xl font-bold",
-                  children: "Adidas",
+                  children: "Nike",
                 }),
               ],
             }),

@@ -2,13 +2,15 @@ import products from "../../api/products.js";
 import { El } from "../../El/el.js";
 import { router } from "../../routes/router.js";
 
+// Async function to fetch and render the home component
 export const home = async () => {
   try {
+    // Fetching product data
     const data = await products();
-
+    // Returning the Home component structure
     return El({
-      element: "div",
-      id: "home",
+      element: "div", // Main container element
+      id: "home", // ID for the container
       className:
         "w-[414px]  h-[82px] mx-auto flex flex-col items-center justify-center overflow-y-hidden scrollbar-hidden",
       children: [
@@ -377,9 +379,6 @@ export const home = async () => {
                   element: "button",
                   className: "font-[600] text-[16px]",
                   children: ["See All"],
-                  // onclick: () => {
-                  //   Router().navigate("/seeall");
-                  // },
                 }),
               ],
             }),
@@ -394,7 +393,6 @@ export const home = async () => {
                 let buttons = [...e.target.parentNode.children];
                 console.log(buttons);
                 buttons.map((button) => {
-                  // console.log(button);
                   if (button === index) {
                     index.classList.add("bg-black");
                     index.classList.add("text-white");

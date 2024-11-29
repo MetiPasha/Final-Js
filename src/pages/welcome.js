@@ -16,14 +16,6 @@ export const welcome = () => {
           router.navigate("/swiper1");
         },
       }),
-      //   El({
-      //     element: "img",
-      //     className: "absolute",
-      //     onclick: () => {
-      //       router.navigate("/swiper1");
-      //     },
-      //     src: "./src/images/assets/inner-dark.png",
-      //   }),
       El({
         element: "div",
         className: "absolute p-4 flex flex-col   bottom-0 w-[414px] h-[300px]",

@@ -17,6 +17,10 @@ import search from "../pages/search";
 import productDetail from "../pages/productDetail/productDetail";
 import cart from "../pages/cart/cart";
 import wishList from "../pages/wishList/wishList";
+import checkOut from "../pages/checkout/checkout";
+import shippingAddress from "../pages/addressCart/shippingAddress";
+import shippingType from "../pages/addressCart/shippingType";
+import Payment from "../pages/payment/payment";
 
 export const router = new Navigo("/");
 const changePage = (target) => {
@@ -85,4 +89,16 @@ router
   })
   .on("/wishList", () => {
     changePage2(wishList);
+  })
+  .on("/checkout", () => {
+    changePage2(checkOut);
+  })
+  .on("/shippingAddress", () => {
+    changePage2(shippingAddress);
+  })
+  .on("/shippingType", () => {
+    changePage2(shippingType);
+  })
+  .on("/payment", () => {
+    changePage2(Payment);
   });

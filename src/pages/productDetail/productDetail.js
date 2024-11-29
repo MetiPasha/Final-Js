@@ -15,19 +15,19 @@ export const productDetail = async (dataid) => {
       switch (color) {
         case "rose":
           return "bg-rose-700";
-
+          break;
         case "gray":
           return "bg-gray-700";
-
+          break;
         case "emerald":
           return "bg-emerald-700";
-
+          break;
         case "teal":
           return "bg-teal-700";
-
+          break;
         case "yellow":
           return "bg-yellow-700";
-
+          break;
         default:
           break;
       }
@@ -50,7 +50,7 @@ export const productDetail = async (dataid) => {
             El({
               element: "img",
               className: "w-6 h-4 mt-[18px]",
-              src: "../../src/images/icon/back.svg",
+              src: "./icons/back.svg",
             }),
             El({
               element: "p",
@@ -136,7 +136,7 @@ export const productDetail = async (dataid) => {
                       element: "img",
                       id: "likebtn-wishlist",
                       className: "",
-                      src: "../../src/images/icon/like.svg",
+                      src: "./icons/home/heart.svg",
                     }),
                   ],
                 }),
@@ -161,7 +161,7 @@ export const productDetail = async (dataid) => {
                 El({
                   element: "img",
                   className: "w-6",
-                  src: "../../src/images/icon/star.svg",
+                  src: "./icons/star.svg",
                 }),
                 El({
                   element: "p",

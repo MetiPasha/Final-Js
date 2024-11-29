@@ -7,7 +7,6 @@ export const AddFavorites = async (id, updatedWishlist) => {
     updatedWishlist
   );
 
-  // Fetch the current user to get all their existing data
   const response = await fetch(`${Url}/users/${id}`);
   if (!response.ok) {
     console.error("Error fetching user data");
@@ -17,16 +16,15 @@ export const AddFavorites = async (id, updatedWishlist) => {
 
   const updatedUser = {
     ...user,
-    wishlist: updatedWishlist, // Update the wishlist with the new data
+    wishlist: updatedWishlist,
   };
 
-  // Send the updated user object back to the backend
   const updateResponse = await fetch(`${Url}/users/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(updatedUser), // Send the whole user object, including updated wishlist
+    body: JSON.stringify(updatedUser),
   });
 
   if (!updateResponse.ok) {
@@ -34,7 +32,6 @@ export const AddFavorites = async (id, updatedWishlist) => {
     throw new Error("Network error during update");
   }
 
-  // Return the updated user object (including the new wishlist)
   const updatedUserFromDb = await updateResponse.json();
   return updatedUserFromDb;
 };

@@ -30,7 +30,7 @@ const adidas = async () => {
                     El({
                       element: "img",
                       className: "text-2xl",
-                      src: "./src/images/icon/back.svg",
+                      src: "./icons/back.svg",
                     }),
                   ],
                 }),

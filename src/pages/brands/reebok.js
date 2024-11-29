@@ -29,14 +29,14 @@ const reebok = async () => {
                     El({
                       element: "img",
                       className: "text-2xl",
-                      src: "./src/images/icon/back.svg",
+                      src: "./icons/back.svg",
                     }),
                   ],
                 }),
                 El({
                   element: "h1",
                   className: "text-2xl font-bold",
-                  children: "Adidas",
+                  children: "Reebok",
                 }),
               ],
             }),
@@ -53,10 +53,6 @@ const reebok = async () => {
               return El({
                 element: "div",
                 id: `${item.id}`,
-                //   onclick: () => {
-                //     // productModal({ id: item.id });
-                //     // Router().navigate(`/product/${item.id}`);
-                //   },
                 className: "",
                 children: [
                   El({

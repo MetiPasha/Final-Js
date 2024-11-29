@@ -34,7 +34,7 @@ export const wishList = async () => {
                   El({
                     element: "img",
                     className: "text-2xl",
-                    src: "./src/images/icon/back.svg",
+                    src: "./icons/back.svg",
                   }),
                 ],
               }),
@@ -88,7 +88,7 @@ export const wishList = async () => {
                             El({
                               element: "img",
                               className: "w-6",
-                              src: "../../src/images/icon/star.svg",
+                              src: "./icons/star.svg",
                             }),
                             El({
                               element: "p",
